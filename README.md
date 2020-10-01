@@ -23,7 +23,7 @@ IPA辞書をベースとして、そこに[IPA NEologd](https://github.com/neolo
 
 ## 辞書の作り方
 
-- https://taku910.github.io/mecab/dic.html に倣い、 `userdict.csv` に追加したい形態素を記入する
+- https://taku910.github.io/mecab/dic.html に倣い、 `userdic.csv` に追加したい形態素を記入する
     - 左文脈ID, 右文脈ID, コストは空でOK
     - 品詞の分類等は頑張って入力する
     - 発音の後に、新しいエントリとして `user` を追加すること
@@ -32,7 +32,7 @@ IPA辞書をベースとして、そこに[IPA NEologd](https://github.com/neolo
 ## アップデートの仕方
 
 - ユーザー定義だけ追加・削除・変更する場合
-    - `userdict.csv` を追加・削除・変更
+    - `userdic.csv` を追加・削除・変更
     - `make_dictionary.sh` を叩くだけ
 - IPA NEologd をアップデートする場合
     - ユーザー定義の追加・削除・変更と同時にしても良い
