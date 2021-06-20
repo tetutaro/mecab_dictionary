@@ -5,7 +5,7 @@ import sys
 import os
 import subprocess
 import argparse
-import logging
+from logging import Logger, getLogger, Formatter, StreamHandler, INFO
 from neologdn import normalize as neonorm
 from MeCab import Tagger
 
@@ -16,7 +16,7 @@ class Morpheme(object):
         dictionary: str,
         node: str,
         pos: int,
-        logger: logging.Logger
+        logger: Logger
     ) -> None:
         logger.debug(node)
         self.start_pos = pos
@@ -58,13 +58,12 @@ class Morpheme(object):
         )
 
 
-
 class SeqMorpheme(object):
     def __init__(
         self: SeqMorpheme,
         dictionary: str,
         sentence: str,
-        logger: logging.Logger
+        logger: Logger
     ) -> None:
         self.dictionary = dictionary
         self.sentence = sentence
@@ -107,7 +106,7 @@ class Tokenizer(object):
     def __init__(
         self: Tokenizer,
         dictionary: str,
-        logger: logging.Logger
+        logger: Logger
     ) -> None:
         self.dictionary = dictionary
         self.logger = logger
@@ -180,11 +179,11 @@ class Tokenizer(object):
 
 def main() -> None:
     # setup logger
-    logger = logging.getLogger(__file__)
-    logger.setLevel(logging.INFO)
-    formatter = logging.Formatter('%(asctime)s: %(levelname)s: %(message)s')
-    handler = logging.StreamHandler(stream=sys.stdout)
-    handler.setLevel(logging.INFO)
+    logger = getLogger(__file__)
+    logger.setLevel(INFO)
+    formatter = Formatter('%(asctime)s: %(levelname)s: %(message)s')
+    handler = StreamHandler(stream=sys.stdout)
+    handler.setLevel(INFO)
     handler.setFormatter(formatter)
     logger.addHandler(handler)
     # get arguments

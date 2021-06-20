@@ -64,7 +64,7 @@ EOS
 
 ## Python から MeCab を使うサンプル
 
-[tokenize.py](tokenize.py) にサンプル実装があります。ご参考までに。
+[mecab.py](mecab.py) にサンプル実装があります。ご参考までに。
 
 ### 必要なパッケージ
 
@@ -76,7 +76,7 @@ EOS
 コマンドで使う場合と同じです。
 
 ```
-> echo "丸太郎は吾輩は猫であるをホゲランドで読んだ" | ./tokenize.py
+> echo "丸太郎は吾輩は猫であるをホゲランドで読んだ" | ./mecab.py
 XXXX-XX-XX XX:XX:XX,XXX: INFO: loading local dictionary: mecab_ipadic
 丸太郎(丸太郎)[マルタロウ] (0:3) 名詞,固有名詞,人名 user
 は(は)[ハ] (3:4) 助詞,係助詞,* ipadic
@@ -94,7 +94,7 @@ XXXX-XX-XX XX:XX:XX,XXX: INFO: loading local dictionary: mecab_ipadic
 IPA 辞書の場合
 
 ```
-> echo "丸太郎は吾輩は猫であるをホゲランドで読んだ" | ./tokenize.py -d ipa
+> echo "丸太郎は吾輩は猫であるをホゲランドで読んだ" | ./mecab.py -d ipa
 XXXX-XX-XX XX:XX:XX,XXX: INFO: loading installed dictionary: ipa
 丸(丸)[マル] (0:1) 名詞,固有名詞,人名
 太郎(太郎)[タロウ] (1:3) 名詞,固有名詞,人名
@@ -114,7 +114,7 @@ XXXX-XX-XX XX:XX:XX,XXX: INFO: loading installed dictionary: ipa
 JUMAN 辞書の場合
 
 ```
-> echo "丸太郎は吾輩は猫であるをホゲランドで読んだ" | ./tokenize.py -d juman
+> echo "丸太郎は吾輩は猫であるをホゲランドで読んだ" | ./mecab.py -d juman
 XXXX-XX-XX XX:XX:XX,XXX: INFO: loading installed dictionary: juman
 丸(丸)[まる] (0:1) 名詞,普通名詞,*
 太郎(太郎)[たろう] (1:3) 名詞,人名,*
@@ -132,7 +132,7 @@ XXXX-XX-XX XX:XX:XX,XXX: INFO: loading installed dictionary: juman
 IPA NEologd 辞書の場合
 
 ```
-> echo "丸太郎は吾輩は猫であるをホゲランドで読んだ" | ./tokenize.py -d neologd
+> echo "丸太郎は吾輩は猫であるをホゲランドで読んだ" | ./mecab.py -d neologd
 XXXX-XX-XX XX:XX:XX,XXX: INFO: loading installed dictionary: neologd
 丸(丸)[マル] (0:1) 名詞,固有名詞,人名
 太郎(太郎)[タロウ] (1:3) 名詞,固有名詞,人名
